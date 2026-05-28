@@ -8,8 +8,11 @@
 </head>
 <body>
     <script>
-        console.log(getComputerChoice())
-        console.log(getHumanChoice())
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(humanScore)
+        console.log(computerScore)
     </script>
 </body>
 </html>
