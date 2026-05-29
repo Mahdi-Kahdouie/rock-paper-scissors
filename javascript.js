@@ -25,8 +25,7 @@ function getHumanChoice(){
 
 
 function playRound(humanChoice, computerChoice) {
-    console.log(humanChoice)
-    console.log(computerChoice)
+
   switch (humanChoice) {
     case "rock":
         if (computerChoice=="paper"){
@@ -71,5 +70,24 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
+function playGame(){
+    for (let i = 1; i <= 5; i++) {
+    console.log(`Round ${i}`)
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    console.log(`Your choice is ${humanSelection}`);
+    console.log(`Computer choice is ${computerSelection}`);
+    playRound(humanSelection, computerSelection);
+    console.log(humanScore);
+    console.log(computerScore);
+    }
+    
+    if(humanScore > computerScore)
+        console.log(`You win the game with score ${humanScore}`);
 
+    else if (humanScore < computerScore)
+        console.log(`Computer win the game with score ${computerScore}`);
 
+    else
+        console.log("Draw!!!");
+}
