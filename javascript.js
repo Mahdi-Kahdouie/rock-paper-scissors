@@ -103,28 +103,24 @@ function playGame(){
     
 
 function calculateResult(choice){
-        displayResult(`Round ${round}`)
-        humanSelection = choice;
-        computerSelection = getComputerChoice();
-        displayResult(`Your choice is ${humanSelection}`)
-        displayResult(`Computer choice is ${computerSelection}`)
-        // console.log(`Your choice is ${humanSelection}`);
-        // console.log(`Computer choice is ${computerSelection}`);
-        ++round;
-        playRound(humanSelection, computerSelection);
-        displayResult(`Your score is ${humanScore} ,and computer score is ${computerScore}`)
-        if(round >5)
-            calculateWinner()
-        
+        if(round<=5){
+            displayResult(`Round ${round} --->  Your score is ${humanScore} ,and computer score is ${computerScore}`)
+            humanSelection = choice;
+            computerSelection = getComputerChoice();
+            displayResult(`Your choice is ${humanSelection}`)
+            displayResult(`Computer choice is ${computerSelection}`)
+            // console.log(`Your choice is ${humanSelection}`);
+            // console.log(`Computer choice is ${computerSelection}`);
+            ++round;
+            playRound(humanSelection, computerSelection);
+            // displayResult(`Your score is ${humanScore} ,and computer score is ${computerScore}`)
+            if(round >5)
+                calculateWinner()
+        }  
 
 }
     
 
-    // console.log(humanScore);
-    // // console.log(computerScore);
-    // displayResult(humanScore)
-    // displayResult(computerScore)
-    
     function calculateWinner(){
     if(humanScore > computerScore)
         displayResult(`You win the game with score ${humanScore}`)
@@ -137,7 +133,9 @@ function calculateResult(choice){
     else
         displayResult("Draw!!!")
         // console.log("Draw!!!");
+    displayResult("Please refresh page for play again")
     }
+    
 }
 
 
